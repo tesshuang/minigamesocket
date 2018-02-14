@@ -57,7 +57,7 @@ io.on("connection", function(socket){
         io.emit("userjoined", allusers);*/
         
         var index = allusers[this.myRoom].indexOf(socket.id);
-        allusers[this.myRoom].spice(index,1);
+        allusers[this.myRoom].splice(index,1);
         io.to(this.myRoom).emit("userjoined", allusers[this.myRoom]);
         
     })
